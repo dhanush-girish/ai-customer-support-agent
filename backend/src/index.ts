@@ -34,8 +34,12 @@ const upload = multer({
   },
 });
 
+// Configure CORS to allow the deployed frontend and local dev
 app.use(cors({
-  origin: 'http://localhost:5173',
+  origin: function (origin, callback) {
+    // Allow all origins (or you can specify an array of allowed URLs)
+    callback(null, true);
+  },
   credentials: true,
 }));
 app.use(express.json());
