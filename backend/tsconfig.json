@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "nodenext",
+    "target": "esnext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "lib": ["esnext"],
+    "outDir": "./dist",
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": true,
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "moduleDetection": "force"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "prisma.config.ts", "run-extension.ts", "test-connection.ts"]
+}
