@@ -215,6 +215,14 @@ export default function DashboardPage() {
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
               <Loader2 style={{ width: 32, height: 32, color: '#60a5fa', animation: 'spin 1s linear infinite' }} />
               <span style={{ color: '#94a3b8', fontSize: '0.875rem' }}>Loading knowledge bases...</span>
+              <motion.span 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                transition={{ delay: 1 }}
+                style={{ color: '#fbbf24', fontSize: '0.875rem', fontWeight: 500, background: 'rgba(245, 158, 11, 0.1)', padding: '6px 12px', borderRadius: 8, border: '1px solid rgba(245, 158, 11, 0.2)' }}
+              >
+                Loading might take a minute...
+              </motion.span>
             </div>
           </div>
         ) : kbs.length === 0 ? (

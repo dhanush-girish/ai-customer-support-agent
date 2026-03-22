@@ -172,6 +172,14 @@ export default function KnowledgeBasePage() {
               <Loader2 style={{ width: 40, height: 40, color: '#60a5fa', animation: 'spin 1s linear infinite' }} />
               <p style={{ color: '#cbd5e1', fontWeight: 500 }}>Processing document...</p>
               <p style={{ color: '#64748b', fontSize: '0.875rem' }}>Extracting text, chunking, and generating embeddings</p>
+              <motion.p 
+                initial={{ opacity: 0, y: 5 }} 
+                animate={{ opacity: 1, y: 0 }} 
+                transition={{ delay: 0.5 }}
+                style={{ color: '#fbbf24', fontSize: '0.875rem', fontWeight: 500, background: 'rgba(245, 158, 11, 0.1)', padding: '6px 12px', borderRadius: 8, border: '1px solid rgba(245, 158, 11, 0.2)' }}
+              >
+                Uploading file might take a minute, please wait...
+              </motion.p>
             </div>
           ) : (
             <>
@@ -226,8 +234,16 @@ export default function KnowledgeBasePage() {
         </AnimatePresence>
 
         {loading ? (
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 160 }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: 160, gap: 12 }}>
             <Loader2 style={{ width: 24, height: 24, color: '#60a5fa', animation: 'spin 1s linear infinite' }} />
+            <motion.span 
+              initial={{ opacity: 0 }} 
+              animate={{ opacity: 1 }} 
+              transition={{ delay: 1 }}
+              style={{ color: '#fbbf24', fontSize: '0.875rem', fontWeight: 500, background: 'rgba(245, 158, 11, 0.1)', padding: '6px 12px', borderRadius: 8, border: '1px solid rgba(245, 158, 11, 0.2)' }}
+            >
+              Loading might take a minute...
+            </motion.span>
           </div>
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: 32 }}>
